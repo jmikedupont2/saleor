@@ -54,7 +54,7 @@ CACHES = {'default': django_cache_url.config()}
 #    'default': dj_database_url.config(
 #        default='postgres://saleor:saleor@localhost:5432/saleor',
 #        conn_max_age=600)}
-from saleor.local_settings import DATABASES
+from saleor.settings_local import DATABASES
 
 TIME_ZONE = 'America/New_York'
 LANGUAGE_CODE = 'en'
