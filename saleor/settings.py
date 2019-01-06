@@ -26,7 +26,8 @@ def get_bool_from_env(name, default_value):
     return default_value
 
 
-DEBUG = get_bool_from_env('DEBUG', True)
+#DEBUG = get_bool_from_env('DEBUG', True)
+from saleor.settings_local import DEBUG
 
 SITE_ID = 1
 
@@ -49,13 +50,13 @@ if REDIS_URL:
     CACHE_URL = os.environ.setdefault('CACHE_URL', REDIS_URL)
 CACHES = {'default': django_cache_url.config()}
 
-DATABASES = {
-    'default': dj_database_url.config(
-        default='postgres://saleor:saleor@localhost:5432/saleor',
-        conn_max_age=600)}
+#DATABASES = {
+#    'default': dj_database_url.config(
+#        default='postgres://saleor:saleor@localhost:5432/saleor',
+#        conn_max_age=600)}
+from saleor.local_settings import DATABASES
 
-
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'America/New_York'
 LANGUAGE_CODE = 'en'
 LANGUAGES = [
     ('ar', _('Arabic')),
